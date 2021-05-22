@@ -9,7 +9,7 @@ This solution contains two projects one is the main code and another is for unit
 Run the following command to clone the repository
 
 ```powershell
-git clone https://github.com/game-of-dice/game-of-dice.git
+https://github.com/VishNu2069/game-of-dice.git
 ```
 
 ### Install Dotnet Core
