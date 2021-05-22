@@ -1,6 +1,6 @@
 # Game of Dice
 
-This solution contains two projects one is the main code and another is for unit tests cases. This is console application that runs on commands line interface through out. 
+This solution contains two projects one is the main code and another is for unit test cases. This is console application that runs on commands line interface through out.
 
 ## Setup
 
