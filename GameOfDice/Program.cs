@@ -16,8 +16,8 @@ namespace GameOfDice
             Console.WriteLine("Welcome to Game of Dice!");
             Console.WriteLine($"Total Player: {totalPlayers}");
             Console.WriteLine($"Target Points: {targetPoints}");
-            Game game = new Game(totalPlayers, targetPoints);
-            game.StartGame();
+            GameLogic game = new GameLogic();
+            game.StartGame(totalPlayers, targetPoints);
             return;
         }
     }

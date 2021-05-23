@@ -4,18 +4,18 @@ using GameOfDice;
 
 namespace UnitTests
 {
-    public class Game_GiveAnotherChance
+    public class GameLogic_GiveAnotherChance
     {
         [Fact]
         public void ReturnTrueIf6 ()
         {
-            Assert.True (Game.GiveAnotherChance (6));
+            Assert.True (GameLogic.GiveAnotherChance (6));
         }
 
         [Fact]
         public void ReturnFalseIfNot6 ()
         {
-            Assert.False (Game.GiveAnotherChance (5));
+            Assert.False (GameLogic.GiveAnotherChance (5));
         }
     }
 }
