@@ -78,9 +78,10 @@ namespace GameOfDice
             while (!game.IsCompleted())
             {
                 PlayerModel currentPlayer = game.GetCurrentPlayer(index);
-                if (currentPlayer.IsGameComplete)
+                if (currentPlayer.IsGameComplete || currentPlayer.IsPenalized)
                 {
                     index = GetNextPlayerIndex(index, game.PlayersCount);
+                    currentPlayer.IsPenalized = false;
                     continue;
                 }
                 Console.WriteLine("------------------------------------------------------------------");
@@ -95,6 +96,7 @@ namespace GameOfDice
                 PrintRankTable(game);
                 if (currentPlayer.ShouldPenalize(diceValue))
                 {
+                    currentPlayer.IsPenalized = true;
                     Console.WriteLine("Your are penalized for rolling 1 twice consecutively.");
                 }
                 currentPlayer.UpdatePreviousRoll1(diceValue);

@@ -9,6 +9,7 @@ namespace GameOfDice
         public int Points { set; get; }
         public bool IsGameComplete { set; get; }
         public bool IsPreviousDiceRoll1 { set; get; }
+        public bool IsPenalized { set; get; }
     }
 
     public static class PlayerModelExtensions
