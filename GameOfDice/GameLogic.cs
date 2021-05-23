@@ -18,7 +18,7 @@ namespace GameOfDice
         }
         internal static void UpdatePlayerRankArraysAfterDiceRoll(GameModel game, PlayerModel currentPlayer)
         {
-            // Continuously compare score with higher rank players to adjust rankings of current player
+            // Continuously compare score with higher rank players to place the current rank in appropriate position
             while (true)
             {
                 if (currentPlayer.Rank == 1)
@@ -27,7 +27,7 @@ namespace GameOfDice
                     break;
                 }
                 PlayerModel higherRankPlayer = game.GetPlayerByRank(currentPlayer.Rank - 1);
-                // Compare score with i-1 rank player and swap ranks if higher score
+                // Compare current player score with above rank player and swap ranks if higher score
                 if (higherRankPlayer.Points < currentPlayer.Points)
                 {
                     game.SwapPositions(currentPlayer, higherRankPlayer);
@@ -63,6 +63,7 @@ namespace GameOfDice
         }
         internal static int GetNextPlayerIndex(int i, int playerCount)
         {
+            // Used modulus to follow Round robin
             return (i + 1) % playerCount;
         }
         internal static bool GiveAnotherChance(int diceValue)
